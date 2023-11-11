@@ -64,7 +64,7 @@ def delete():
             tree.delete(item)
             conn = sql.connect("jogos.db")
             cur = conn.cursor()
-            cur.execute("DELETE FROM jogos WHERE id=?", (id,))
+            cur.execute("DELETE FROM jogos WHERE id= {item_selecionado[0]}")
             conn.commit()
             cur.close()
             conn.close()
